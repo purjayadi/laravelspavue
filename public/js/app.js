@@ -60180,7 +60180,7 @@ var render = function() {
                       attrs: {
                         type: "text",
                         id: "name",
-                        placeholder: "menu order",
+                        placeholder: "sub menu",
                         autofocus: ""
                       },
                       domProps: { value: _vm.submenu.name },
@@ -60282,7 +60282,7 @@ var render = function() {
                           }
                         ],
                         staticClass: "form-control",
-                        attrs: { type: "text", placeholder: "Search" },
+                        attrs: { type: "text", placeholder: "Search submenu" },
                         domProps: { value: _vm.pencarian },
                         on: {
                           input: function($event) {
@@ -60309,7 +60309,7 @@ var render = function() {
                       { staticClass: "data-ada" },
                       _vm._l(_vm.submenus, function(row) {
                         return _c("tr", [
-                          _c("td", [_vm._v(_vm._s(row.menu_id))]),
+                          _c("td", [_vm._v(_vm._s(row.keyname))]),
                           _vm._v(" "),
                           _c("td", [_vm._v(_vm._s(row.name))]),
                           _vm._v(" "),
@@ -60390,7 +60390,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("label", { attrs: { for: "upc_ean_isbn" } }, [
-      _vm._v("Menu ID "),
+      _vm._v("Parent Menu "),
       _c("span", { staticClass: "text-danger" }, [_vm._v("*")])
     ])
   },
@@ -60399,7 +60399,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("label", { attrs: { for: "item_name" } }, [
-      _vm._v("order "),
+      _vm._v("Submenu "),
       _c("span", { staticClass: "text-danger" }, [_vm._v("*")])
     ])
   },
@@ -60419,9 +60419,9 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", [_vm._v("ID Menu")]),
+        _c("th", [_vm._v("Parent Menu")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Name")]),
+        _c("th", [_vm._v("Submenu")]),
         _vm._v(" "),
         _c("th", [_vm._v("Aksi")])
       ])

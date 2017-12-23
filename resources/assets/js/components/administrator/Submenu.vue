@@ -7,7 +7,7 @@
                     <div class="panel-body">
                         <form @submit.prevent="saveForm" @keydown="$event.keyCode === 13 ? $event.preventDefault() : false">
                           <div class="form-group" :class="{ 'has-error': errors.menu_id }">
-                            <label for="upc_ean_isbn">Menu ID <span class="text-danger">*</span></label>
+                            <label for="upc_ean_isbn">Parent Menu <span class="text-danger">*</span></label>
                             <select class="form-control show-tick" v-model="submenu.menu_id" >
                                 <option value="">-- Please select --</option>
                                 <option v-for="menu in menusData" :value="menu.idkey">{{ menu.namekey }}</option>
@@ -17,8 +17,8 @@
                             </div>
                           </div>
                           <div class="form-group" :class="{ 'has-error': errors.name }">
-                            <label for="item_name">order <span class="text-danger">*</span></label>
-                            <input type="text" v-model="submenu.name" class="form-control" id="name" placeholder="menu order" autofocus>
+                            <label for="item_name">Submenu <span class="text-danger">*</span></label>
+                            <input type="text" v-model="submenu.name" class="form-control" id="name" placeholder="sub menu" autofocus>
                             <div class="help-block" v-if="errors.name">
                               <div v-for="error in errors.name"><strong>{{ error }}</strong></div>
                             </div>
@@ -41,7 +41,7 @@
                   <div class="form-group form-float">
                     <div id="imaginary_container">
                         <div class="input-group stylish-input-group">
-                            <input type="text" class="form-control"  placeholder="Search" v-model="pencarian" >
+                            <input type="text" class="form-control"  placeholder="Search submenu" v-model="pencarian" >
                             <span class="input-group-addon">
                                 <button type="submit">
                                     <span class="glyphicon glyphicon-search"></span>
@@ -54,14 +54,14 @@
                 <table class="table table-bordered">
                   <thead>
                     <tr>
-                      <th>ID Menu</th>
-                      <th>Name</th>
+                      <th>Parent Menu</th>
+                      <th>Submenu</th>
                       <th>Aksi</th>
                     </tr>
                   </thead>
                   <tbody v-if="submenus.length" class="data-ada">
                     <tr v-for="row in submenus">
-                      <td>{{row.menu_id}}</td>
+                      <td>{{row.keyname}}</td>
                       <td>{{row.name}}</td>
                       <td width="130px">
                         <button class="btn btn-xs btn-warning" @click="showMenu(row.id)"><icon name="pencil" label="Forked Repository"></icon></button>

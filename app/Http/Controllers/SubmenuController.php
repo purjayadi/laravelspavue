@@ -58,7 +58,10 @@ class SubmenuController extends Controller
     public function show()
     {
         //
-        $submenu = Submenu::paginate(10);
+        $submenu = DB::table('submenus')
+            ->join('menus', 'submenus.menu_id', '=', 'menus.id')
+            ->select('submenus.*', 'menus.name as keyname')
+            ->paginate(10);
         return $submenu;
     }
 
