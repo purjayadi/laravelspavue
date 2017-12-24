@@ -15,7 +15,7 @@
     <div id="app">
         @include('layouts.menu')
         <router-view></router-view>
-      
+
     </div> <!-- app -->
     <script src=/js/app.js></script>
     </body>

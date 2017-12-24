@@ -26,6 +26,13 @@ Route::get('/editsubmenu/{id}','SubmenuController@edit');
 Route::get('/searchsubmenu','SubmenuController@search');
 Route::delete('/submenu/{id}','SubmenuController@destroy');
 
+Route::resource('/halaman', 'HalamanController', ['except' => 'show','store','update']);
+Route::get('/gethalaman', 'HalamanController@show');
+Route::get('/edithalaman/{id}', 'HalamanController@edit');
+Route::get('/searchhalaman', 'HalamanController@search');
+Route::delete('/halaman/{id}', 'HalamanController@destroy');
+
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
